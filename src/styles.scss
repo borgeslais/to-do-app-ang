@@ -1,0 +1,196 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Almarai", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.noise {
+    width: 100vw;
+    height: 100vh;
+
+    z-index: -99;
+    background: linear-gradient(to right, rgb(223, 221, 217), transparent), url(./assets/nnnoise.svg);
+}
+
+.overlay {
+    background: rgb(41, 29, 29);
+    mix-blend-mode: multiply;
+    z-index: -99;
+}
+
+.isolate {
+    isolation: isolate;
+    position: absolute;
+    z-index: -99;
+}
+
+ul {
+    text-align: left;
+    margin: 16px;
+    padding: 16px;
+    list-style: none;
+    background: #ece9e4;
+    border-radius: 10px;
+    box-shadow: 1px 4px 8px 4px rgba(85, 75, 71, 0.24);
+    min-width: 654px;
+
+    li {
+        padding: 8px;
+        margin: 8px;
+        font-size: 1em;
+        font-style: italic;
+        border-bottom: 1px solid rgba(85, 75, 71, 0.349);
+
+        button {
+            border: none;
+            background-color: rgba(228, 228, 228, 0);
+            font-size: 1em;
+            float: right;
+
+        }
+    }
+}
+
+#concluir {
+    color: rgba(87, 107, 60, 0.349);
+    transition: color 0.2s;
+
+    &:hover {
+        color: rgba(101, 141, 48, 0.959);
+        transition: color 0.2s;
+    }
+}
+
+#remover {
+    color: rgba(107, 83, 60, 0.349);
+    transition: color 0.2s;
+
+    &:hover {
+        color: rgba(167, 44, 35, 0.959);
+        transition: color 0.2s;
+    }
+}
+
+#salvar {
+    background-color: rgba(71, 114, 46, 0.726);
+    color: rgb(255, 255, 255);
+    transition: color 0.2s;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: none;
+    box-shadow: 0 1px 8px 2px rgba(85, 75, 71, 0.24);
+
+    &:hover {
+        background-color: rgb(115, 177, 86);
+        color: white;
+        transition: color 0.2s;
+    }
+}
+
+#refazer {
+    color: rgba(107, 83, 60, 0.349);
+    transition: color 0.2s;
+    
+
+    &:hover {
+        color: rgba(35, 59, 167, 0.959);
+        transition: color 0.2s;
+    }
+}
+
+#nova-tarefa {
+    background-color: rgba(71, 114, 46, 0.726);
+    color: rgb(255, 255, 255);
+    transition: color 0.2s;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 1px 8px 2px rgba(85, 75, 71, 0.24);
+
+
+    &:hover {
+        background-color: rgb(115, 177, 86);
+        color: white;
+        transition: color 0.2s;
+    }
+
+}
+
+#cancelar {
+    background-color: none;
+    color: rgb(107, 83, 60);
+    transition: color 0.2s;
+    padding: 12px 24px;
+    border-radius: 100px;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    border: none;
+
+
+    &:hover {
+        border: none;        
+        color: rgb(141, 19, 39);
+        transition: color 0.2s;
+    }
+
+
+}
+
+
+
+button {
+    cursor: pointer;
+}
+
+#modal {
+    text-align: left;
+    margin: 16px;
+    padding: 16px;
+    background: #ece9e4;
+    border-radius: 10px;
+    box-shadow: 1px 4px 10px 6px rgba(85, 75, 71, 0.24);
+    width: 654px;
+
+    input {
+        width: 100%;
+        line-height: 50px;
+        text-indent: 12px;
+        font-size: 1em;
+        border: none;
+        background-color: #e1dddb;
+        border-radius: 2px;
+    }
+
+    fieldset {
+        border: none;
+    }
+}
+
+.danger {
+    color: rgb(141, 19, 39);
+
+    padding: 6px;
+    margin-top: 12px;
+}
+
+small {
+    display: flex;
+    justify-content: center;
+}

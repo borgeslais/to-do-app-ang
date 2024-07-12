@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>
+<ul *ngIf="mode == 'list'">
+  <p *ngIf="todos.length == 0"><small>Não há nenhuma tarefa ainda.</small></p>
+  <li *ngFor="let todo of todos">{{ todo.title }}  
+    <button id="concluir" *ngIf="!todo.done"
+      (click)="markAsDone(todo)">Concluir</button>
+    <button id="refazer" *ngIf="todo.done" (click)="markAsUndone(todo)">Refazer</button>
+    <button id="remover" (click)="remove(todo)">Remover</button>
+  </li>
+</ul>
+
+<div id="modal" *ngIf="mode == 'add'">
+  <h2 class="text-center">Nova tarefa</h2>
+  <form [formGroup]="form">
+    <label>
+    </label>
+    <input type="text" placeholder="Título da tarefa" maxlength="60" formControlName="title">
+    <small class="danger" *ngIf="form.controls['title'].invalid && !form.controls['title'].pristine">Este campo deve
+      conter entre 3 e 60 caracteres.</small><br>
+    <p class="text-center">
+      <button id="salvar" [disabled]="form.invalid" (click)="add()">Salvar</button>
+    </p>
+  </form>
+</div>
+
+<button id="nova-tarefa" (click)="changeMode('add')" *ngIf="mode == 'list'">Nova tarefa</button>
+<button id="cancelar" (click)="changeMode('list')" *ngIf="mode == 'add'">Cancelar</button>
+
+
+<!-- Types of binding: -->
+<!-- () = HTML > TS
+[] = TS > HTML
+[()] = TWO WAY BINDING TS <> HTML -->
